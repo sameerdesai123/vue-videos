@@ -21,9 +21,18 @@
 
 export default {
   name: 'Home',
+  mounted () {
+    this.$store.dispatch('loadVideos')
+  },
+  methods: {
+  },
+  computed: {
+    VideoList () {
+      return this.$store.state.videos
+    }
+  },
   data () {
     return {
-      VideoList: this.$store.state.videos
     }
   },
   components: {
